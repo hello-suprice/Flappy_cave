@@ -6,7 +6,7 @@ canvas.height = 400;
 
 let spacePressed = false;
 let angle = 0;
-let hue = 0;
+//let hue = 0;
 let frame = 0;
 let score = 0;
 let gameSpeed = 2;
@@ -14,11 +14,13 @@ let gameSpeed = 2;
 
 function animate() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-   // ctx.fillRect(10, canvas.height - 90, 50, 50);
-   plane.update();
-   plane.draw
-   requestAnimationFrame(animate);
-   //angle+=0.12;
+    //ctx.fillRect(10, canvas.height - 90, 50, 50);
+    bird.update();
+    bird.draw();
+    //handleParticles();
+    requestAnimationFrame(animate);
+    angle+=0.12;
+
 }
 animate();
 
