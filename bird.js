@@ -14,21 +14,21 @@ class Bird {
             this.vy = 0;
         } else {
             this.vy += this.weight;
-            this.vy *= 0.9;
+            this.vy *= 0.8;
             this.y += this.vy;
         }
         if (this.y < 0 + this.height) {
             this.y = 0 + this.height;
             this.vy = 0;
         }
-        if (spacePressed && this.y > this.height * 3) this.flap();
+        if (spacePressed && this.y > this.height * 1) this.flap();
     }
     draw(){
         ctx.fillStyle = 'red';
         ctx.fillRect(this.x, this.y, this.width, this.height);
     }
     flap(){
-        this.vy -=2;
+        this.vy -=5;
     }
 }
 const bird = new Bird();
