@@ -12,7 +12,7 @@ let score = 0;
 let gameSpeed = 2;
 
 const background =new Image();
-background.src='./Image/background.png' ;
+background.src='./Image/realBackground.png' ;
 const BG ={ 
     x1:0,
     x2:canvas.width,
