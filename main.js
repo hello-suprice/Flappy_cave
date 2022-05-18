@@ -63,7 +63,7 @@ window.addEventListener('keyup', function(e) {
 
 let gameOver = false
 const bang = new Image();
-bang.src = 'bang.png'; //./Image/bang.png
+bang.src = './Image/bang.png'; //./Image/bang.png
 function handleCollisions(){
     for (let i = 0; i < obstaclesArray.length; i++){
         if (bird.x < obstaclesArray[i].x + obstaclesArray[i].width &&

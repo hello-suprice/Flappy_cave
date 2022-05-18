@@ -1,5 +1,5 @@
 const birdSprite = new Image();
-birdSprite.src='fågel2.png';
+birdSprite.src='./Image/fågel2.png';
 
 class Bird {
     constructor(){
