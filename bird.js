@@ -36,27 +36,9 @@ class Bird {
             this.width * 1.7, this.height * 1.7)
     }
     flap(){
-        this.vy -=5;
+        this.vy -= 5;
         if (this.frameX >= 3) this.frameX = 0;
         else this.frameX ++;
     }
 }
 const bird = new Bird();
-
-
-//let Bird1 = new Image ();
-//Bird1.src = './Image/birdDown.png' ;
-//const Bird1 = { 
-//    x:150,
-//    y:200,
-//    width:20,
-//    height:20,
-//    weight:1,
-//    
-//         }
-//ctx.drawImage(Bird1, birdx, birdy, 50, 50)
-//while (gameOver = false) {
-    // Byt mellan fågelbilderna i intervall på 2 sekunder
-
-
-//}
