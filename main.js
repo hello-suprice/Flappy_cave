@@ -3,7 +3,6 @@ const ctx = canvas.getContext('2d');
 canvas.width = 600;
 canvas.height = 400;
 
-
 let spacePressed = false;
 let angle = 0;
      
@@ -71,6 +70,7 @@ function handleCollisions(){
             (bird.y > canvas.height - obstaclesArray[i].bottom && 
             bird.y + bird.height < canvas.height))){
                 // kollision hittad
+                playExplosion()
                 ctx.drawImage(bang, bird.x, bird.y, 50, 50);
                 ctx.font = "25px Georgia";
                 ctx.fillStyle = 'red';
