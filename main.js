@@ -11,9 +11,9 @@ let frame = 0;
 let score = 0;
 let gameSpeed = 2;
 
-const background =new Image();
-background.src='./Image/background.png' ;
-const bakgrund ={ 
+const background = new Image();
+background.src = './Image/realBackground.png' ;
+const bakgrund = { 
     x1:0,
     x2:canvas.width,
     y:0,
@@ -60,6 +60,7 @@ window.addEventListener('keyup', function(e) {
     if (e.code === 'Space') spacePressed = false;
 });
 
+let gameOver = false
 const bang = new Image();
 bang.src = 'bang.png'; //./Image/bang.png
 function handleCollisions(){
@@ -74,6 +75,7 @@ function handleCollisions(){
                 ctx.font = "25px Georgia";
                 ctx.fillStyle = 'black';
                 ctx.fillText('Game Over Your score is: ' + score, 140, canvas.height/2 - 10);
+                let gameOver = true
 
                 return true;
             }
