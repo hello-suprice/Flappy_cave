@@ -11,25 +11,30 @@ let frame = 0;
 let score = 0;
 let gameSpeed = 2;
 
-const background = new Image();
-background.src = './Image/BG.png';
-const BG = {
-    x1: 0,
-    x2: canvas.width,
-    y: 0,
-    width: canvas.width,
-    height: canvas.height
-}
-function handleBackground() {
-    if(BG.x1 <= BG.width) BG.x1 = BG.width;
-    else BG.x1 -= gameSpeed;
-    ctx.drawImage(background, BG.x1, BG.y, BG.width, BG.height);
+const background =new Image();
+background.src='./Image/background.png' ;
+const BG ={ 
+    x1:0,
+    x2:canvas.width,
+    y:0,
+    width:canvas.width,
+    height:canvas.height
+    
+         }
+function handlebackground(){
+    if (BG.x1<= -BG.width + gameSpeed) BG.x1=BG.width;
+     else (BG.x1-=gameSpeed);
+     if (BG.x2<= -BG.width + gameSpeed)BG.x2 = BG.width;
+     else(BG.x2 -= gameSpeed);
+     ctx.drawImage(background,BG.x1,BG.y,BG.width,BG.height);
+     ctx.drawImage(background,BG.x2,BG.y,BG.width,BG.height);
+     
 }
 
 function animate() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     //ctx.fillRect(10, canvas.height - 90, 50, 50);
-    handleBackground();
+    handlebackground();
     handleObstacles();
     bird.update();
     bird.draw();
@@ -56,7 +61,7 @@ window.addEventListener('keyup', function(e) {
 });
 
 const bang = new Image();
-bang.src = './Image/bang.png';
+bang.src = 'bang.png'; //./Image/bang.png
 function handleCollisions(){
     for (let i = 0; i < obstaclesArray.length; i++){
         if (bird.x < obstaclesArray[i].x + obstaclesArray[i].width &&
