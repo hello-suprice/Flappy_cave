@@ -22,10 +22,10 @@ const bakgrund = {
     
          }
 function handlebackground(){
-    if (bakgrund.x1<= -bakgrund.width + gameSpeed) bakgrund.x1=bakgrund.width;
-     else (bakgrund.x1-=gameSpeed);
-     if (bakgrund.x2<= -bakgrund.width + gameSpeed)bakgrund.x2 = bakgrund.width;
-     else(bakgrund.x2 -= gameSpeed);
+    if (bakgrund.x1 <= -bakgrund.width + gameSpeed / 2) bakgrund.x1 = bakgrund.width;
+     else (bakgrund.x1 -= gameSpeed / 2);
+     if (bakgrund.x2 <= -bakgrund.width + gameSpeed / 2)bakgrund.x2 = bakgrund.width;
+     else(bakgrund.x2 -= gameSpeed / 2);
      ctx.drawImage(background, bakgrund.x1, bakgrund.y, bakgrund.width, bakgrund.height);
      ctx.drawImage(background, bakgrund.x2, bakgrund.y, bakgrund.width, bakgrund.height);
      
