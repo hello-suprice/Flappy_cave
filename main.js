@@ -68,7 +68,7 @@ function handleCollisions(){
                 ctx.drawImage(bang, bird.x, bird.y, 50, 50);
                 ctx.font = "25px Georgia";
                 ctx.fillStyle = 'black';
-                ctx.fillText('Game Over nub and here is your score ' + score, 140, canvas.height/2 - 10);
+                ctx.fillText('Game Over Your score is: ' + score, 140, canvas.height/2 - 10);
 
                 return true;
             }
