@@ -26,8 +26,8 @@ function handlebackground(){
      else (bakgrund.x1-=gameSpeed);
      if (bakgrund.x2<= -bakgrund.width + gameSpeed)bakgrund.x2 = bakgrund.width;
      else(bakgrund.x2 -= gameSpeed);
-     ctx.drawImage(background,bakgrund.x1,bakgrund.y,bakgrund.width,bakgrund.height);
-     ctx.drawImage(background,bakgrund.x2,bakgrund.y,bakgrund.width,bakgrund.height);
+     ctx.drawImage(background, bakgrund.x1, bakgrund.y, bakgrund.width, bakgrund.height);
+     ctx.drawImage(background, bakgrund.x2, bakgrund.y, bakgrund.width, bakgrund.height);
      
 }
 
