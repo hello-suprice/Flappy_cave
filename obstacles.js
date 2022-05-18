@@ -36,3 +36,6 @@ function handleObstacles(){
         obstaclesArray.pop(obstaclesArray[0]);
     }
 }
+
+
+/////gqwgfqwff
