@@ -74,8 +74,9 @@ function handleCollisions(){
                 // kollision hittad
                 ctx.drawImage(bang, bird.x, bird.y, 50, 50);
                 ctx.font = "25px Georgia";
-                ctx.fillStyle = 'black';
+                ctx.fillStyle = 'gray';
                 ctx.fillText('Game Over Your score is: ' + score, 140, canvas.height/2 - 10);
+                ctx.fillText('Press ctrl r to restart', 140, canvas.height/1.5 - 10)
                 let gameOver = true
 
                 return true;
