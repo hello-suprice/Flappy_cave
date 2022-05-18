@@ -29,8 +29,9 @@ class Bird {
         if (spacePressed && this.y > this.height * 1) this.flap();
     }
     draw(){
-        ctx.fillStyle = 'red';
-        ctx.fillRect(this.x, this.y, this.width, this.height);
+        //ctx.fillStyle = 'red';
+        //ctx.fillRect(this.x, this.y, this.width, this.height);
+        //Hitbox
         ctx.drawImage(birdSprite, 0, 0, this.originalWidth, this.originalHeight, this.x, this.y, 
             this.width, this.height)
     }
@@ -39,21 +40,3 @@ class Bird {
     }
 }
 const bird = new Bird();
-
-
-//let Bird1 = new Image ();
-//Bird1.src = './Image/birdDown.png' ;
-//const Bird1 = { 
-//    x:150,
-//    y:200,
-//    width:20,
-//    height:20,
-//    weight:1,
-//    
-//         }
-//ctx.drawImage(Bird1, birdx, birdy, 50, 50)
-//while (gameOver = false) {
-    // Byt mellan fågelbilderna i intervall på 2 sekunder
-
-
-//}
