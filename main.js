@@ -12,8 +12,8 @@ let score = 0;
 let gameSpeed = 2;
 
 const background = new Image();
-background.src = './Image/BackgroundF.png';
-const bg = {
+background.src = './Image/BG.png';
+const BG = {
     x1: 0,
     x2: canvas.width,
     y: 0,
@@ -21,9 +21,9 @@ const bg = {
     height: canvas.height
 }
 function handleBackground() {
-    if(bg.x1 <= bg.width) bg.x1 = bg.width;
-    else bg.x1 -= gameSpeed;
-    ctx.drawImage(background, bg.x1, bg.y, bg.width, bg.height)
+    if(BG.x1 <= BG.width) BG.x1 = BG.width;
+    else BG.x1 -= gameSpeed;
+    ctx.drawImage(background, BG.x1, BG.y, BG.width, BG.height);
 }
 
 function animate() {
