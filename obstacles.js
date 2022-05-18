@@ -2,10 +2,10 @@ const obstaclesArray = [];
 
 class Obstacle{
     constructor(){
-        this.top = (Math.random() * canvas.height/3) + 20;
-        this.bottom = (Math.random() * canvas.height/3) + 20;
+        this.top = (Math.random() * canvas.height/3) + 50;
+        this.bottom = (Math.random() * canvas.height/3) + 50;
         this.x = canvas.width;
-        this.width = 20;
+        this.width = 30;
         this.color = 'black'
         this.counted = false;
     }
@@ -32,7 +32,7 @@ function handleObstacles(){
     for (let i = 0; i < obstaclesArray.length; i++){
         obstaclesArray[i].update();
     }
-    if (obstaclesArray.length > 20){
+    if (obstaclesArray.length > 17 ){
         obstaclesArray.pop(obstaclesArray[0]);
     }
 }
