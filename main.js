@@ -13,7 +13,7 @@ let gameSpeed = 2;
 
 const background =new Image();
 background.src='./Image/realBackground.png' ;
-const BG ={ 
+const bakgrund ={ 
     x1:0,
     x2:canvas.width,
     y:0,
@@ -22,12 +22,12 @@ const BG ={
     
          }
 function handlebackground(){
-    if (BG.x1<= -BG.width + gameSpeed) BG.x1=BG.width;
-     else (BG.x1-=gameSpeed);
-     if (BG.x2<= -BG.width + gameSpeed)BG.x2 = BG.width;
-     else(BG.x2 -= gameSpeed);
-     ctx.drawImage(background,BG.x1,BG.y,BG.width,BG.height);
-     ctx.drawImage(background,BG.x2,BG.y,BG.width,BG.height);
+    if (bakgrund.x1<= -bakgrund.width + gameSpeed) bakgrund.x1=bakgrund.width;
+     else (bakgrund.x1-=gameSpeed);
+     if (bakgrund.x2<= -bakgrund.width + gameSpeed)bakgrund.x2 = bakgrund.width;
+     else(bakgrund.x2 -= gameSpeed);
+     ctx.drawImage(background,bakgrund.x1,bakgrund.y,bakgrund.width,bakgrund.height);
+     ctx.drawImage(background,bakgrund.x2,bakgrund.y,bakgrund.width,bakgrund.height);
      
 }
 
