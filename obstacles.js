@@ -2,8 +2,8 @@ const obstaclesArray = [];
 
 class Obstacle{
     constructor(){
-        this.top = (Math.random() * canvas.height/3) + 20;
-        this.bottom = (Math.random() * canvas.height/3) + 20;
+        this.top = (Math.random() * canvas.height / 3) + 35;
+        this.bottom = (Math.random() * canvas.height / 3) + 35;
         this.x = canvas.width;
         this.width = 20;
         this.color = 'black'
