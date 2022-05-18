@@ -22,10 +22,10 @@ const bakgrund = {
     
          }
 function handlebackground(){
-    if (bakgrund.x1<= -bakgrund.width + gameSpeed) bakgrund.x1=bakgrund.width;
-     else (bakgrund.x1-=gameSpeed);
-     if (bakgrund.x2<= -bakgrund.width + gameSpeed)bakgrund.x2 = bakgrund.width;
-     else(bakgrund.x2 -= gameSpeed);
+    if (bakgrund.x1 <= -bakgrund.width + gameSpeed / 2) bakgrund.x1 = bakgrund.width;
+     else (bakgrund.x1 -= gameSpeed / 2);
+     if (bakgrund.x2 <= -bakgrund.width + gameSpeed / 2)bakgrund.x2 = bakgrund.width;
+     else(bakgrund.x2 -= gameSpeed / 2);
      ctx.drawImage(background, bakgrund.x1, bakgrund.y, bakgrund.width, bakgrund.height);
      ctx.drawImage(background, bakgrund.x2, bakgrund.y, bakgrund.width, bakgrund.height);
      
@@ -61,7 +61,6 @@ window.addEventListener('keyup', function(e) {
     bird.frameX = 0;
 });
 
-let gameOver = false
 const bang = new Image();
 bang.src = './Image/bang.png'; //./Image/bang.png
 function handleCollisions(){
@@ -74,10 +73,10 @@ function handleCollisions(){
                 // kollision hittad
                 ctx.drawImage(bang, bird.x, bird.y, 50, 50);
                 ctx.font = "25px Georgia";
-                ctx.fillStyle = 'gray';
-                ctx.fillText('Game Over Your score is: ' + score, 140, canvas.height/2 - 10);
-                ctx.fillText('Press ctrl+r to restart', 140, canvas.height/1.5 - 10)
-                let gameOver = true
+                ctx.fillStyle = 'red';
+                ctx.fillText('Game Over', 250, canvas.height/2 - 10);
+                ctx.fillText('Your score is: ' + score, 230, canvas.height/2 + 25)
+                ctx.fillText('Press ctrl+r to restart', 200, canvas.height/1.5 - 10)
 
                 return true;
             }
