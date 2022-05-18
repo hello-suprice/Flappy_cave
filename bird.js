@@ -1,13 +1,13 @@
 const birdSprite = new Image();
-birdSprite.src='frame--1.png';
+birdSprite.src='birdDown2.png';
 
 class Bird {
     constructor(){
         this.x = 150;
         this.y = 200;
         this.vy = 0;
-        this.originalWidth = 717;
-        this.originalHeight = 610;
+        this.originalWidth = 700;
+        this.originalHeight = 596;
         this.width = this.originalWidth/20;
         this.height = this.originalHeight/ 20;
         this.weight = 1;
