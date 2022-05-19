@@ -81,7 +81,7 @@ function handleCollisions(){
             bird.y + bird.height < canvas.height))){
                 // kollision hittad
                 playExplosion() 
-                // Spelar ljudet explosion när kollision hittas
+                // Spelar ljudet explosion när kollision hittas (audio.js)
                 ctx.drawImage(bang, bird.x, bird.y, 50, 50);
                 ctx.font = "25px Georgia";
                 ctx.fillStyle = 'red';
