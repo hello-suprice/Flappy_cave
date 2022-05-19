@@ -9,26 +9,31 @@ let frame = 0; //hålla reda på antalet bildrutor i vår animation slinga så a
 let score = 0;
 let gameSpeed = 2; //flytta hinder och bakgrund i samma hastighet
 
+/* --------------------------- Bakgrundsbild ---------------------*/
 const background = new Image();
 background.src = './Image/realBackground.png' ;
-const bakgrund = { 
+const realBackground = { 
     x1:0,
     x2:canvas.width,
     y:0,
     width:canvas.width,
     height:canvas.height
-    
-         }
+}
 function handlebackground(){
-    if (bakgrund.x1 <= -bakgrund.width + gameSpeed / 2) bakgrund.x1 = bakgrund.width;
-     else (bakgrund.x1 -= gameSpeed / 2);
-     if (bakgrund.x2 <= -bakgrund.width + gameSpeed / 2)bakgrund.x2 = bakgrund.width;
-     else(bakgrund.x2 -= gameSpeed / 2);
-     ctx.drawImage(background, bakgrund.x1, bakgrund.y, bakgrund.width, bakgrund.height);
-     ctx.drawImage(background, bakgrund.x2, bakgrund.y, bakgrund.width, bakgrund.height);
+    if (realBackground.x1 <= -realBackground.width + gameSpeed / 2) realBackground.x1 = realBackground.width;
+    else (realBackground.x1 -= gameSpeed / 2);
+    if (realBackground.x2 <= -realBackground.width + gameSpeed / 2)realBackground.x2 = realBackground.width;
+    else(realBackground.x2 -= gameSpeed / 2);
+    ctx.drawImage(background, realBackground.x1, realBackground.y, realBackground.width, realBackground.height);
+    ctx.drawImage(background, realBackground.x2, realBackground.y, realBackground.width, realBackground.height);
+
+    /*
+    om bakgrund bilden rullas hela vägen till vänster så att hela dess bredd är gömd bakom den vänstra kanten av duken, 
+    flytta den snabbt och dölj den bakom den högra kanten av duken så att vi kan skjuta den till vänster igen. 
+    */
      
 }
-
+/*---------------------------- Anropar funktionerna ------------------------------------*/
 function animate() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     //ctx.fillRect(10, canvas.height - 90, 50, 50);
@@ -42,7 +47,7 @@ function animate() {
     ctx.strokeText(score, 450, 70);
     ctx.fillText(score, 450, 70);
     handleCollisions();
-    if(handleCollisions()) return;
+    if(handleCollisions()) return; // om fågeln kolliderar med något hinder så fryser spelet
     requestAnimationFrame(animate);
     angle+=0.12; // perioden för sin kurvan blir längre när det är mindre värde
     frame++; 
@@ -53,7 +58,7 @@ function animate() {
     */
 }
 animate();
-
+/*--------------------------------------- Eventlistner för space --------------------------------*/
 window.addEventListener('keydown', function(e) {
     if (e.code === 'Space') spacePressed = true;
 });
@@ -63,8 +68,10 @@ window.addEventListener('keyup', function(e) {
     bird.frameX = 0;
 });
 
+/*----------------------------- Kollisionsdetektering ----------------------------*/
+
 const bang = new Image();
-bang.src = './Image/bang.png'; //./Image/bang.png
+bang.src = './Image/bang.png';
 function handleCollisions(){
     for (let i = 0; i < obstaclesArray.length; i++){
         if (bird.x < obstaclesArray[i].x + obstaclesArray[i].width &&

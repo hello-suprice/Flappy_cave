@@ -11,12 +11,12 @@ class Obstacle{
     }
     draw(){
         ctx.fillStyle = this.color
-        ctx.fillRect(this.x, 0, this.width, this.top);
-        ctx.fillRect(this.x, canvas.height - this.bottom, this.width, this.bottom);
+        ctx.fillRect(this.x, 0, this.width, this.top); //ritar ut hinder för den övre. börjar från O (dvs toppen) ner till hur lång den ska vara.
+        ctx.fillRect(this.x, canvas.height - this.bottom, this.width, this.bottom); // Ritar ut hindern för den undre. Börjar från 400 (bottnet) upp till hur lång den ska vara.
 
     }
     update(){
-        this.x -= gameSpeed;
+        this.x -= gameSpeed; // hinderna rör sig åt vänster
         if (!this.counted && this.x < bird.x){
             score++;
             this.counted = true;
@@ -26,13 +26,21 @@ class Obstacle{
 }
 
 function handleObstacles(){
-    if (frame%100 ===0) {
-        obstaclesArray.unshift(new Obstacle);
+    if (frame%100 ===0) { //ritar ut hinder var 100:e frame
+        obstaclesArray.unshift(new Obstacle); 
+
+        /*
+        Den här metoden tar vad vi än skickar till den som ett attribut och lägger till det som ett nytt objekt i början av en array som vi anropar den. 
+        Det kommer att passera ett nytt hinder, nytt nyckelord och kommer att skapa ett nytt tomt objekt och ge det attribut och egenskaper baserat 
+        på ritning som vi deklarerade i partikelklasskonstruktorn på rad 4.
+         */
+
+       
     }
-    for (let i = 0; i < obstaclesArray.length; i++){
+    for (let i = 0; i < obstaclesArray.length; i++){ // cykla bara igenom hela hinderarrayen och anrop uppdateringsmetoden som kommer att beräkna aktuell position för varje hinder
         obstaclesArray[i].update();
     }
-    if (obstaclesArray.length > 17 ){
+    if (obstaclesArray.length > 17 ){ //Det kanske blir ett problem om arrayen växer oändligt.
         obstaclesArray.pop(obstaclesArray[0]);
     }
 }
