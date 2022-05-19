@@ -1,4 +1,4 @@
-#canvas1 {
+#canvas1 { /* position, top, left och transform är till att centrera spelet i mitten, dvs spelområdet*/
     position: absolute;
     top: 50%;
     left: 50%;

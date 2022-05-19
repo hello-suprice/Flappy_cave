@@ -1,14 +1,13 @@
 const canvas = document.getElementById('canvas1');
-const ctx = canvas.getContext('2d');
+const ctx = canvas.getContext('2d'); //detta gör att vi kan använda inbyggda canvas-metoder och vi kan anropa dem på ctx
 canvas.width = 600;
 canvas.height = 400;
 
 let spacePressed = false;
-let angle = 0;
-     
-let frame = 0;
+let angle = 0; //få fågeln att röra sig något upp och ner när den är inaktiv
+let frame = 0; //hålla reda på antalet bildrutor i vår animation slinga så att vi kan lägga till eventuella periodiska triggers till vårt spel
 let score = 0;
-let gameSpeed = 2;
+let gameSpeed = 2; //flytta hinder och bakgrund i samma hastighet
 
 const background = new Image();
 background.src = './Image/realBackground.png' ;
@@ -29,7 +28,8 @@ function handlebackground(){
      ctx.drawImage(background, bakgrund.x2, bakgrund.y, bakgrund.width, bakgrund.height);
      
 }
-
+// requestAnimationFrame i funktionen animate kommer att skapa vår animations slinga genom 
+// ett program som i princip kallas rekursion där funktion bara kör sin kod och sedan anropar sig själv inifrån sig själv om och om igen
 function animate() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     //ctx.fillRect(10, canvas.height - 90, 50, 50);
@@ -76,7 +76,7 @@ function handleCollisions(){
                 ctx.fillStyle = 'red';
                 ctx.fillText('Game Over', 250, canvas.height/2 - 10);
                 ctx.fillText('Your score is: ' + score, 230, canvas.height/2 + 25)
-                ctx.fillText('Press ctrl+r to restart', 200, canvas.height/1.5 - 10)
+                
 
                 return true;
             }
