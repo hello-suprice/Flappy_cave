@@ -26,6 +26,8 @@
     border-color: black;
 }
 
+/* Container för titeln*/
+
 #container2 {
     display: flex;
     font-family: 'Times New Roman';
@@ -45,3 +47,5 @@
     border-width: 1.5px;
     border-color: black;
 }
+
+/* Container för spelinstruktionerna*/
