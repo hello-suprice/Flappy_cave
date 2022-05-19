@@ -28,8 +28,7 @@ function handlebackground(){
      ctx.drawImage(background, bakgrund.x2, bakgrund.y, bakgrund.width, bakgrund.height);
      
 }
-// requestAnimationFrame i funktionen animate kommer att skapa vår animations slinga genom 
-// ett program som i princip kallas rekursion där funktion bara kör sin kod och sedan anropar sig själv inifrån sig själv om och om igen
+
 function animate() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     //ctx.fillRect(10, canvas.height - 90, 50, 50);
@@ -45,9 +44,13 @@ function animate() {
     handleCollisions();
     if(handleCollisions()) return;
     requestAnimationFrame(animate);
-    angle+=0.12;
+    angle+=0.12; // perioden för sin kurvan blir längre när det är mindre värde
     frame++; 
 
+    /*
+    requestAnimationFrame i funktionen animate kommer att skapa vår animations slinga genom 
+    ett program som i princip kallas rekursion där funktion bara kör sin kod och sedan anropar sig själv inifrån sig själv om och om igen
+    */
 }
 animate();
 
