@@ -43,7 +43,7 @@ class Bird {
         if (this.y < 0) {
             this.y = 0 ;
             this.vy = 0;
-            /* Samma grund som linje 21 till 23. Den går inte över spelområdet */
+            /* Samma grund som linje 21 till 23. Den går inte över spelområdet på övre delen*/
         }
         if (spacePressed && this.y > this.height) this.flap(); // fågeln rör sig uppet då space är tryckt på
     }
@@ -53,13 +53,13 @@ class Bird {
         ctx.drawImage(birdSprite, this.frameX * this.originalWidth, 0, this.originalWidth, this.originalHeight, this.x - 8, this.y - 16, 
             this.width * 1.7, this.height * 1.7)
         /* 
-        Ser till att kollisionen händer när fågeln nuddar hinderna och inte när den gå igenom.
+        Ser till att kollisionen händer när fågeln nuddar hindern när halva kroppen går igenom.
         */
 
     }
     flap(){
         this.vy -= 5; // varje gång vi slår kommer hastigheten att minska med fem, vilket ger spelaren en push uppåt
-        if (this.frameX >= 3) this.frameX = 0;
+        if (this.frameX >= 2) this.frameX = 0;
         else this.frameX ++;
     }
 }
