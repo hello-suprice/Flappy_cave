@@ -20,10 +20,10 @@ const realBackground = {
     height:canvas.height
 }
 function handlebackground(){
-    if (realBackground.x1 <= -realBackground.width + gameSpeed / 2) realBackground.x1 = realBackground.width;
-    else (realBackground.x1 -= gameSpeed / 2);
-    if (realBackground.x2 <= -realBackground.width + gameSpeed / 2)realBackground.x2 = realBackground.width;
-    else(realBackground.x2 -= gameSpeed / 2);
+    if (realBackground.x1 <= -realBackground.width + gameSpeed) realBackground.x1 = realBackground.width;
+    else (realBackground.x1 -= gameSpeed);
+    if (realBackground.x2 <= -realBackground.width + gameSpeed)realBackground.x2 = realBackground.width;
+    else(realBackground.x2 -= gameSpeed);
     ctx.drawImage(background, realBackground.x1, realBackground.y, realBackground.width, realBackground.height);
     ctx.drawImage(background, realBackground.x2, realBackground.y, realBackground.width, realBackground.height);
 
