@@ -20,6 +20,15 @@ class Obstacle{
         if (!this.counted && this.x < bird.x){
             score++;
             this.counted = true;
+
+
+            /*
+            Om den räknade punkten är falsk och samtidigt är "this.x" mindre än "bird.x", vilket betyder att vi har tagit oss 
+            förbi hindret och först då ökar poängen med ett genom att säga "score++". "this.counted" kommer också bli till
+            sant så att just detta hinder har redan räknats med i vår poäng, eftersom denna "if statment" bara anges
+            när "this.counted" är falskt kommer detta hinder inte att kunna öka poängen igen.
+ 
+            */
         }
         this.draw();
     }
