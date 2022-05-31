@@ -35,6 +35,8 @@ function handlebackground(){
 }
 /*---------------------------- Anropar funktionerna ------------------------------------*/
 function animate() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    //ctx.fillRect(10, canvas.height - 90, 50, 50);
     handlebackground();
     handleObstacles();
     bird.update();
